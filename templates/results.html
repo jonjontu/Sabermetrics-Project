@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Project: Result Page</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Sabermetrics Catchout Prediction</h1>
+    <h3>Optimal Prediction</h3>
+    <p>The optimal prediction for the catchout rate is: (see <strong>p_airout</strong> column)</p>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                {% for c in preds_col_names %}
+                <th>{{ c }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in preds_head_dat %}
+            <tr>
+                {% for c in preds_col_names %}
+                <td>{{ r[c] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+
+    <h3>Model Information</h3>
+    <p><strong>Model Name:</strong> {{ model_info["Model Name"] }}</p>
+    <p><strong>Score:</strong> {{ model_info["Best Score"] }}</p>
+    <p><strong>Hyperparameters:</strong></p>
+    <ul>
+        {% for p, v in model_info["Best Params"].items() %}
+        <li><strong>{{ p.split("__")[-1].capitalize() }}:</strong> {{ v }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Feature Importances</h3>
+    <ul>
+        {% for f, i in features_dat %}
+        <li><strong>{{ f.split("__")[-1].capitalize().replace("_"," ").title() }}:</strong> {{ i }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home Page</a>
+</body>
+</html>

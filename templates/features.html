@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Project: Result Page</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Sabermetrics Catchout Prediction</h1>
+
+    <h3>Feature Descriptions</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for c in dict_col_names %}
+                <th>{{ c }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in dict_dat %}
+            <tr>
+                {% for c in dict_col_names %}
+                <td>{{ r[c] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+
+    <a href="/">Back to Home Page</a>
+</body>

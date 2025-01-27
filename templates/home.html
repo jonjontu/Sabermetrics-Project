@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Project: Home Page</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Sabermetrics Catchout Prediction</h1>
+
+    <h3>Feature Descriptions</h3>
+    <a href="/features">Feature Descriptions</a>
+
+    <h3>Training Dataset Preview (First 10 rows)</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for c in train_col_names %}
+                <th>{{ c }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in train_head_dat %}
+            <tr>
+                {% for c in train_col_names %}
+                <td>{{ r[c] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+
+    <h3>Test Dataset Preview (First 10 rows)</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for c in test_col_names %}
+                <th>{{ c }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in test_head_dat %}
+            <tr>
+                {% for c in test_col_names %}
+                <td>{{ r[c] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+
+    <h3>Click the button to see the optimal prediction for p_airout!</h3>
+    <div>
+        <button onclick="window.location.href='/results';">Predict catchout rate (p_airout)!</button>
+    </div>
+</body>
+</html>

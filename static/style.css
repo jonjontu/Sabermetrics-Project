@@ -1,0 +1,22 @@
+body {
+    font-family: "Calibri", sans-serif;
+    margin: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+table {
+    margin: 20px auto;
+    background-color: #1e1e1e;
+    border-collapse: collapse;
+    border: 1px solid #444444;
+    width: 100%;
+}    
+
+th, td {
+    background-color: #1e1e1e;
+    border: 1px solid #444444;
+    text-align: left;
+    padding: 8px;
+}
