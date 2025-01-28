@@ -2,4 +2,4 @@
 
 Predicting the out rate of a ball
 
-<u>Languages and Frameworks</u>: Python, HTML/CSS, Flask
+<strong>Languages and Frameworks</strong>: Python, HTML/CSS, Flask
